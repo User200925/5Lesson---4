@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Пример оповещения</title>
+</head>
+<body>
+    <script>
+
+        let name = prompt("Введите ваше имя:");
+        
+        function checkName(name) {
+            name = name.toLowerCase(); // Приводим имя к нижнему регистру
+            let letters = new Set(name); // Получаем множество уникальных букв в имени
+
+            alert(`Имя: ${name.charAt(0).toUpperCase() + name.slice(1)}`);
+            alert(`Буквы, входящие в имя: ${Array.from(letters).sort().join(', ')}`);
+
+            if (name.length > 1) {
+                let secondLetter = name.charAt(1);
+                alert(`Вторая буква '${secondLetter}' в имени.`);
+            } else {
+                alert("В имени нет второй буквы.");
+            }
+        }
+
+        checkName(name);
+    </script>
+</body>
+</html>
